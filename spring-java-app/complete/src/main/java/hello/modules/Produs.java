@@ -5,16 +5,14 @@ import java.util.ArrayList;
 
 public class Produs {
 	
-  private int price;
-  private int id;
   private String name;
+  private int id;
 
-  public Persoana() {}
+  public Produs() {}
 
-  public Persoana(int id, int price,String name) {
+  public Produs(int id, String name) {
       this.name = name;
       this.id = id;
-	  this.price = price;
   }
 
   public String getName() {
@@ -23,9 +21,5 @@ public class Produs {
 
   public int getId() {
     return this.id;
-  }
-  
-  public int getPrice() {
-    return this.price;
   }
 }

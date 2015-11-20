@@ -55,11 +55,12 @@ public class PersoanaController {
   
    
   @RequestMapping(value="/persoana/{id}", method = RequestMethod.PUT)
-  public ResponseEntity update(@RequestParam(value = "name", defaultValue="eroare") String name,@PathVariable("id") int id) {
+  public ResponseEntity update(@RequestParam(value = "name", defaultValue="eroare") String name, @PathVariable("id") int id) {
 	 for(Persoana p : this.persoane) {
       if(p.getId() == id) {
          Persoana nouaPersoana = new Persoana(id,name); 
 		 this.persoane.set(id,nouaPersoana);
+		 return new ResponseEntity<Persoana>(nouaPersoana, new HttpHeaders(), HttpStatus.OK);
       }
     }
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
@@ -71,7 +72,7 @@ public class PersoanaController {
     for(Persoana p : this.persoane) {
       if(p.getId() == id) {
         this.persoane.remove(p);
-        return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NO_CONTENT);
+        return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.OK);
       }
     }
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
