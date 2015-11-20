@@ -27,13 +27,13 @@ public class MasinaController {
   }
 
   
-  @RequestMapping(value="/persoana", method = RequestMethod.GET)
+  @RequestMapping(value="/masina", method = RequestMethod.GET)
   public List<Masina> index() {
     return this.masini;
   }
 
-  @RequestMapping(value="/persoana", method = RequestMethod.POST)
-  public ResponseEntity create(@RequestParam(value = "name", defaultValue="eroare") String name) {
+  @RequestMapping(value="/masina/{nume}", method = RequestMethod.POST)
+   public ResponseEntity create(@PathVariable("nume") String name) {
 	  
 	 Masina p = new Masina(this.masini.size() + 1,name); 
 	 this.masini.add(p);
@@ -43,7 +43,7 @@ public class MasinaController {
 
 
   
-  @RequestMapping(value="/persoana/{id}", method = RequestMethod.GET)
+  @RequestMapping(value="/masina/{id}", method = RequestMethod.GET)
   public ResponseEntity show(@PathVariable("id") int id) {
     for(Masina p : this.masini) {
       if(p.getId() == id) {
@@ -54,8 +54,9 @@ public class MasinaController {
   }
   
    
-  @RequestMapping(value="/persoana/{id}", method = RequestMethod.PUT)
-  public ResponseEntity update(@RequestParam(value = "name", defaultValue="eroare") String name, @PathVariable("id") int id) {
+   
+  @RequestMapping(value="/masina/{id}/{nume}", method = RequestMethod.PUT)
+  public ResponseEntity update(@PathVariable("id") int id, @PathVariable("nume") String name){  
 	 for(Masina p : this.masini) {
       if(p.getId() == id) {
          Masina nouaMasina = new Masina(id,name); 
@@ -67,7 +68,7 @@ public class MasinaController {
   }
   
   
-  @RequestMapping(value="/persoana/{id}", method = RequestMethod.DELETE)
+  @RequestMapping(value="/masina/{id}", method = RequestMethod.DELETE)
   public ResponseEntity remove(@PathVariable("id") int id) {
     for(Masina p : this.masini) {
       if(p.getId() == id) {

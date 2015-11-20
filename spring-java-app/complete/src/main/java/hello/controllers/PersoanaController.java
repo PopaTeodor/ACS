@@ -32,8 +32,10 @@ public class PersoanaController {
     return this.persoane;
   }
 
-  @RequestMapping(value="/persoana", method = RequestMethod.POST)
-  public ResponseEntity create(@RequestParam(value = "name", defaultValue="eroare") String name) {
+  
+  
+  @RequestMapping(value="/persoana/{nume}", method = RequestMethod.POST)
+  public ResponseEntity create(@PathVariable("nume") String name) {
 	  
 	 Persoana p = new Persoana(this.persoane.size() + 1,name); 
 	 this.persoane.add(p);
@@ -53,9 +55,8 @@ public class PersoanaController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
   
-   
-  @RequestMapping(value="/persoana/{id}", method = RequestMethod.PUT)
-  public ResponseEntity update(@RequestParam(value = "name", defaultValue="eroare") String name, @PathVariable("id") int id) {
+  @RequestMapping(value="/persoana/{id}/{nume}", method = RequestMethod.PUT)
+  public ResponseEntity update(@PathVariable("id") int id, @PathVariable("nume") String name){  
 	 for(Persoana p : this.persoane) {
       if(p.getId() == id) {
          Persoana nouaPersoana = new Persoana(id,name); 
