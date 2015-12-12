@@ -6,11 +6,571 @@
   <link rel="stylesheet" media="all" href="css/custom.css">
 </head>
 <body>
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="">AWJ Base Project</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Cars</a></li>
+            <li><a href="#">Persons</a></li>
+			<li><a href="#">Products</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <hr/>
 
   <div class="container">
     <div ng-controller="HomeController">
       <h1>{{ helloWorld }}</h1>
+      <p>Writing this live into the browser...</p>
+	  <p>Many TODOs D:</p>
     </div>
+  </div>
+
+  <hr/>
+  
+<!-- TODOs:
+
+1)add more attributes to resourcs 
+2)remove ID from the attributes(?) 
+3)add another resource(?)
+
+-->
+
+  <!-- /resources1 -->
+  <div class="container">
+    <h1>Cars</h1>
+    <h2>List all resources</h2>
+    <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th style="width:210px;">Options</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Dacia</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Renault</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Volkswagen</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Audi</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Edit a car</h2>
+        <form action="" method="">
+          <div class="form-group">
+            <label for="attribute1">ID</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Car ID">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Name</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Car Name">
+          </div>    
+          <button type="submit" class="btn btn-info">Save</button>
+        </form>
+      </div>
+
+
+      <div class="col-md-3 col-md-offset-6">
+        <h2>Add a car</h2>
+        <form action="" method="">
+          <div class="form-group">
+              <label for="attribute1">ID</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Car ID">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Name</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Car Name">
+          </div>       
+          <button type="submit" class="btn btn-success">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Show a car</h2>
+      </div>
+      <div class="col-md-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/AutoDaciaBucarest.jpg" class="img-thumbnail"/>
+      </div>
+      <div class="col-md-10">
+        <h1>Name</h1>
+        <p>ID</p>
+        <h3>Sub resource</h3>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Model Year</th>
+            <th>Price($)</th>
+          </tr>
+          <tr>
+            <td>1995</td>
+            <td>2008</td>
+          </tr>
+          <tr>
+            <td>500</td>
+            <td>1000</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+  <!-- /resources2 -->
+  <div class="container">
+    <h1>Persons</h1>
+    <h2>List all resources</h2>
+    <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th style="width:210px;">Options</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Gigel</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Costel</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Mirel</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>tot Gigel</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Edit a person</h2>
+        <form action="" method="">
+          <div class="form-group">
+            <label for="attribute1">ID</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Person ID">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Name</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Person Name">
+          </div>    
+          <button type="submit" class="btn btn-info">Save</button>
+        </form>
+      </div>
+
+
+      <div class="col-md-3 col-md-offset-6">
+        <h2>Add a person</h2>
+        <form action="" method="">
+          <div class="form-group">
+              <label for="attribute1">ID</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Person ID">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Name</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Person Name">
+          </div>       
+          <button type="submit" class="btn btn-success">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Show a person</h2>
+      </div>
+      <div class="col-md-2">
+        <img src="http://i2.cdnds.net/13/31/618x435/ustv-kevin-chapman-person-of-interest-1.jpg" class="img-thumbnail"/>
+      </div>
+      <div class="col-md-10">
+        <h1>Name</h1>
+        <p>ID</p>
+        <h3>Sub resource</h3>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Date of Birth(d.m.y)</th>
+            <th>Height(m)</th>
+          </tr>
+          <tr>
+            <td>25.5.1995</td>
+            <td>2,1</td>
+          </tr>
+          <tr>
+            <td>13.8.1994</td>
+            <td>1,7</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+  
+    <!-- /resources3 -->
+  <div class="container">
+    <h1>Products</h1>
+    <h2>List all resources</h2>
+    <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th style="width:210px;">Options</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Sprite</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Lipton</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Coca-Cola</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Fanta</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Edit a product</h2>
+        <form action="" method="">
+          <div class="form-group">
+            <label for="attribute1">ID</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Product ID">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Name</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Product Name">
+          </div>    
+          <button type="submit" class="btn btn-info">Save</button>
+        </form>
+      </div>
+
+
+      <div class="col-md-3 col-md-offset-6">
+        <h2>Add a product</h2>
+        <form action="" method="">
+          <div class="form-group">
+              <label for="attribute1">ID</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Product ID">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Name</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Product Name">
+          </div>       
+          <button type="submit" class="btn btn-success">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Show a product</h2>
+      </div>
+      <div class="col-md-2">
+        <img src="https://yt3.ggpht.com/-3o0qMaMvuwc/AAAAAAAAAAI/AAAAAAAAAAA/CycJ2hpRKvA/s900-c-k-no/photo.jpg" class="img-thumbnail"/>
+      </div>
+      <div class="col-md-10">
+        <h1>Name</h1>
+        <p>ID</p>
+        <h3>Sub resource</h3>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Expiration date(d.m.y)</th>
+            <th>Price($)</th>
+          </tr>
+          <tr>
+            <td>13.12.2015</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>6.1.2016</td>
+            <td>3</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+
+  <div class="container">
+    <footer class="footer">
+      <p class="text-muted pull-left">AWJ Base Project &copy; 2015-2016</p>
+      <p class="text-muted pull-right">Popa Teodor, 331AB</p>
+    </footer>
   </div>
 
   <script src="js/jquery-1.11.3.min.js"></script>
