@@ -5,12 +5,14 @@ import java.util.ArrayList;
 
 public class Masina {
 	
-  private String name;
   private int id;  
+  private String name;
+ 
 
   public Masina(int id, String name) {
-      this.name = name;
       this.id = id;
+	  this.name = name;
+      
   }
 
   public String getName() {
