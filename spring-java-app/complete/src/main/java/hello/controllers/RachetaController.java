@@ -53,19 +53,16 @@ public class RachetaController {
   
    
    
-  @RequestMapping(value="/racheta/{id}/{nume}", method = RequestMethod.PUT)
-  public ResponseEntity update(@PathVariable("id") int id, @PathVariable("nume") String name, @RequestBody Racheta r){  
-	 for(Racheta rac : this.rachete) {
-      if(rac.getId() == r.getId()) {
-         Racheta nouaRacheta = new Racheta(r.getId(),r.getName(),r.getDistance()); 
-		 this.rachete.set(r.getId(),nouaRacheta);
-		 return new ResponseEntity<Racheta>(nouaRacheta, new HttpHeaders(), HttpStatus.OK);
+  @RequestMapping(value="/racheta", method = RequestMethod.PUT)
+  public List<Racheta> update(@RequestBody Racheta r){
+    for(Racheta racheta : this.rachete){
+      if(racheta.getId() == r.getId())		  {
+		  rachete.set(rachete.indexOf(racheta), r);
       }
     }
-    return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
+    return this.rachete;
   }
-  
-  
+    
   @RequestMapping(value="/racheta/{id}", method = RequestMethod.DELETE)
   public ResponseEntity remove(@PathVariable("id") int id) {
     for(Racheta r : this.rachete) {

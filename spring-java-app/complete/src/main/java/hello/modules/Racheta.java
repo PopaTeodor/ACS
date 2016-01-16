@@ -15,6 +15,7 @@ public class Racheta {
       this.id = id;
 	  this.distance = distance;
   }
+  public Racheta () {}
 
   public String getName() {
       return this.name;

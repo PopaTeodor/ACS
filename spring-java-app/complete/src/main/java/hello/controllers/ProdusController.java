@@ -56,16 +56,14 @@ public class ProdusController {
   
    
    
-  @RequestMapping(value="/produs/{id}/{nume}", method = RequestMethod.PUT)
-  public ResponseEntity update(@PathVariable("id") int id, @PathVariable("nume") String name){  
-	 for(Produs p : this.produse) {
-      if(p.getId() == id) {
-         Produs nouProdus = new Produs(id,name); 
-		 this.produse.set(id,nouProdus);
-		 return new ResponseEntity<Produs>(nouProdus, new HttpHeaders(), HttpStatus.OK);
+  @RequestMapping(value="/produs", method = RequestMethod.PUT)
+  public List<Produs> update(@RequestBody Produs p){
+    for(Produs prod : this.produse){
+      if(prod.getId() == p.getId())		  {
+		  produse.set(produse.indexOf(prod), p);
       }
     }
-    return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
+    return this.produse;
   }
   
   

@@ -55,16 +55,14 @@ public class MasinaController {
   
    
    
-  @RequestMapping(value="/masina/{id}/{nume}", method = RequestMethod.PUT)
-  public ResponseEntity update(@PathVariable("id") int id, @PathVariable("nume") String name){  
-	 for(Masina p : this.masini) {
-      if(p.getId() == id) {
-         Masina nouaMasina = new Masina(id,name); 
-		 this.masini.set(id,nouaMasina);
-		 return new ResponseEntity<Masina>(nouaMasina, new HttpHeaders(), HttpStatus.OK);
+  @RequestMapping(value="/masina", method = RequestMethod.PUT)
+  public List<Masina> update(@RequestBody Masina m){
+    for(Masina masina : this.masini){
+      if(masina.getId() == m.getId())		  {
+		  masini.set(masini.indexOf(masina), m);
       }
     }
-    return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
+    return this.masini;
   }
   
   

@@ -49,11 +49,11 @@ public class PersoanaController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
 
-  @RequestMapping(value="/persoana/{id}/{nume}", method = RequestMethod.PUT)
-  public List<Persoana> update(@PathVariable("id") int id,@PathVariable("nume") String nume){
-    for(Persoana p : this.persoane){
-      if(p.getId() == id)		  {
-		  p.setName(nume);
+  @RequestMapping(value="/persoana", method = RequestMethod.PUT)
+  public List<Persoana> update(@RequestBody Persoana p){
+    for(Persoana pers : this.persoane){
+      if(pers.getId() == p.getId())		  {
+		  persoane.set(persoane.indexOf(pers), p);
       }
     }
     return this.persoane;
